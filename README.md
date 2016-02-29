@@ -17,7 +17,7 @@ e.g. add the following to the `<head>` section of your page
     
     <link rel="stylesheet" href="/css/chartjs-sass-default.css">
     ```
-3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object. (see API below)
+3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object. (see [API below](## Mixin chart_colors API))
     ```js
     //No colors are required to be specified in the js (as it should be!!)
     var data = {
@@ -72,16 +72,20 @@ There are two optional inputs to the `chart_colors` sass mixin:
     ```
     @mixin chart_colors($base_colors:null, $num_required:null)
     ```
-1. base_colors
+1. $base_colors
     * Allowed values: `null`, a single color, or array of colors (sass understands singletons as 1 length arrays)
-    * These will map in the same order to the data provided, i.e. Dataseries1 => Color1 etc.
-2. num_required
+    * These will map in the same order to the data provided, i.e. Dataseries_1 => Color_1 etc.
+2. $num_required
     * Allowed values: `null`, or a positive integer 
-    * If missing or null, it will create only the formatting for the provided `base_colors`
-    * If provided, it will create formatting for each dataseries up the number required. If the number required is greater than the number of `base_colors` provided then it will use random colors.
+    * If missing or null, it will create only the formatting for the provided `$base_colors`
+    * If provided, it will create formatting for each dataseries up the number required. If the number required is greater than the number of `$base_colors` provided then it will use random colors.
 3. Output
     * Will use each of the base colors (or random colors) to create formatting for each type of chart.
-    * To keep things simple, it creates a slightly bloated CSS with each chart type - however this reduces the number of constants/strings to manage in javascript and sass.
+    * To keep things simple, it creates a slightly bloated CSS with formatting for each chart type.
+4. Parsing CSS - parse_css_colors()
+    * `parse_css_colors()` will parse each provided dataset and add the colors defined in the css.
+    * Simply put, it will assign the class for each series to an object in the dom then retrieve the color based on that.
+
 **Sample output:**
     ```
     .line.fillColor_1,
