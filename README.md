@@ -20,9 +20,24 @@ e.g. add the following to the `<head>` section of your page
 3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object.
     
     ```js
+    //No colors are required to be specified in the js (as it should be!!)
+    var data = {
+                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                datasets: [
+                    {
+                        label: "My First dataset",
+                        data: [65, 59, 80, 81, 56, 55, 40]
+                    },
+                    {
+                        label: "My Second dataset",
+                        data: [28, 48, 40, 19, 86, 27, 90]
+                    }
+                ]
+            };
     var ctx = document.getElementById("myChart").getContext("2d");
-    `* data = parse_css_colors("myChart", CHART_TYPES.LINE, data); * `
-    var myChart = new Chart(ctx).Line(data, options);
+    // *** Parse the data to add colors from CSS here ***
+    data = parse_css_colors("myChart", CHART_TYPES.LINE, data); 
+    var myChart = new Chart(ctx).Line(data);
     ```
     
 ## Customisation
