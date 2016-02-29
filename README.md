@@ -94,7 +94,7 @@ There are two optional inputs to the `chart_colors` sass mixin:
 
 **Sample output:**
 
-    ```
+    ```css
     .line.fillColor_1,
     .radar.fillColor_1 {
       color: rgba(151, 187, 205, 0.2); }
