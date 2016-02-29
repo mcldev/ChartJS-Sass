@@ -50,17 +50,22 @@ e.g. add the following to the `<head>` section of your page
     ```
     @import 'chartjs-sass';
     ```
+    
 3. Create chart specific formatting by including a parent selector, or formatting for all charts without.
-**Create formatting for a specific chart only**
+
+    **Create formatting for a specific chart only**
     ```
     #myTestChart {
         @include chart_colors((pink, red, blue, yellow, orange));
     }
     ```
+
     **Create default formatting for all charts**
+
     ```
     @include chart_colors((orange, pink, red));
     ```
+
 4. Include your custom css file into your head file, *after* the default stylesheet, e.g.
    ```html
    <link rel="stylesheet" href="/css/chartjs-sass-default.css">
@@ -72,6 +77,7 @@ There are two optional inputs to the `chart_colors` sass mixin:
     ```
     @mixin chart_colors($base_colors:null, $num_required:null)
     ```
+    
 1. $base_colors
     * Allowed values: `null`, a single color, or array of colors (sass understands singletons as 1 length arrays)
     * These will map in the same order to the data provided, i.e. Dataseries_1 => Color_1 etc.
@@ -87,6 +93,7 @@ There are two optional inputs to the `chart_colors` sass mixin:
     * Simply put, it will assign the class for each series to an object in the dom then retrieve the color based on that.
 
 **Sample output:**
+
     ```
     .line.fillColor_1,
     .radar.fillColor_1 {
