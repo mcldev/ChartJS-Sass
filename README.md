@@ -47,18 +47,18 @@ e.g. add the following to the `<head>` section of your page
 ## Customisation
 1. Use Sass to modify/create your own custom chart formats.
 2. Import `chartjs-sass.scss` into your custom scss file. e.g.
-    ```sass
+    ```
     @import 'chartjs-sass';
     ```
 3. Create chart specific formatting by including a parent selector, or formatting for all charts without.
-    *Create formatting for a specific chart only*
-    ```sass
+    **Create formatting for a specific chart only**
+    ```
     #myTestChart {
         @include chart_colors((pink, red, blue, yellow, orange));
     }
     ```
-    *Create default formatting for all charts*
-    ```sass
+    **Create default formatting for all charts**
+    ```
     @include chart_colors((orange, pink, red));
     ```
 4. Include your custom css file into your head file, *after* the default stylesheet, e.g.
@@ -69,21 +69,21 @@ e.g. add the following to the `<head>` section of your page
 
 ## Mixin chart_colors API
 There are two optional inputs to the `chart_colors` sass mixin:
-    ```sass
+    ```
     @mixin chart_colors($base_colors:null, $num_required:null)
     ```
 1. base_colors
-..* Allowed values: `null`, a single color, or array of colors (sass understands singletons as 1 length arrays)
-..* These will map in the same order to the data provided, i.e. Dataseries1 => Color1 etc.
+    * Allowed values: `null`, a single color, or array of colors (sass understands singletons as 1 length arrays)
+    * These will map in the same order to the data provided, i.e. Dataseries1 => Color1 etc.
 2. num_required
-..* Allowed values: `null`, or a positive integer 
-..* If missing or null, it will create only the formatting for the provided `base_colors`
-..* If provided, it will create formatting for each dataseries up the number required. If the number required is greater than the number of `base_colors` provided then it will use random colors.
+    * Allowed values: `null`, or a positive integer 
+    * If missing or null, it will create only the formatting for the provided `base_colors`
+    * If provided, it will create formatting for each dataseries up the number required. If the number required is greater than the number of `base_colors` provided then it will use random colors.
 3. Output
-..* Will use each of the base colors (or random colors) to create formatting for each type of chart.
-..* To keep things simple, it creates a slightly bloated CSS with each chart type - however this reduces the number of constants/strings to manage in javascript and sass.
-*Sample output:*
-    ```css
+    * Will use each of the base colors (or random colors) to create formatting for each type of chart.
+    * To keep things simple, it creates a slightly bloated CSS with each chart type - however this reduces the number of constants/strings to manage in javascript and sass.
+**Sample output:**
+    ```
     .line.fillColor_1,
     .radar.fillColor_1 {
       color: rgba(151, 187, 205, 0.2); }
