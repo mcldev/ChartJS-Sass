@@ -18,7 +18,8 @@ e.g. add the following to the `<head>` section of your page
     <link rel="stylesheet" href="/css/chartjs-sass-default.css">
     ```
 3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object.
-    ```javascript
+    
+    ```js
     var ctx = document.getElementById("myChart").getContext("2d");
     `* data = parse_css_colors("myChart", CHART_TYPES.LINE, data); * `
     var myChart = new Chart(ctx).Line(data, options);
