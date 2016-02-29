@@ -51,7 +51,7 @@ e.g. add the following to the `<head>` section of your page
     @import 'chartjs-sass';
     ```
 3. Create chart specific formatting by including a parent selector, or formatting for all charts without.
-    **Create formatting for a specific chart only**
+**Create formatting for a specific chart only**
     ```
     #myTestChart {
         @include chart_colors((pink, red, blue, yellow, orange));
