@@ -17,8 +17,7 @@ e.g. add the following to the `<head>` section of your page
     
     <link rel="stylesheet" href="/css/chartjs-sass-default.css">
     ```
-3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object.
-    
+3. Parse the Chart.js data before creating the chart, this will retrieve each color for each dataset and inject into the data object. (see API below)
     ```js
     //No colors are required to be specified in the js (as it should be!!)
     var data = {
@@ -34,9 +33,14 @@ e.g. add the following to the `<head>` section of your page
                     }
                 ]
             };
+    
+    //Get context object 
     var ctx = document.getElementById("myChart").getContext("2d");
+    
     // *** Parse the data to add colors from CSS here ***
     data = parse_css_colors("myChart", CHART_TYPES.LINE, data); 
+    
+    //Create Chart
     var myChart = new Chart(ctx).Line(data);
     ```
     
@@ -62,3 +66,59 @@ e.g. add the following to the `<head>` section of your page
    <link rel="stylesheet" href="/css/chartjs-sass-default.css">
    <link rel="stylesheet" href="/css/my-custom-chart-formats.css">
    ```
+
+## Mixin chart_colors API
+There are two optional inputs to the `chart_colors` sass mixin:
+    ```sass
+    @mixin chart_colors($base_colors:null, $num_required:null)
+    ```
+1. base_colors
+..* Allowed values: `null`, a single color, or array of colors (sass understands singletons as 1 length arrays)
+..* These will map in the same order to the data provided, i.e. Dataseries1 => Color1 etc.
+2. num_required
+..* Allowed values: `null`, or a positive integer 
+..* If missing or null, it will create only the formatting for the provided `base_colors`
+..* If provided, it will create formatting for each dataseries up the number required. If the number required is greater than the number of `base_colors` provided then it will use random colors.
+3. Output
+..* Will use each of the base colors (or random colors) to create formatting for each type of chart.
+..* To keep things simple, it creates a slightly bloated CSS with each chart type - however this reduces the number of constants/strings to manage in javascript and sass.
+*Sample output:*
+    ```css
+    .line.fillColor_1,
+    .radar.fillColor_1 {
+      color: rgba(151, 187, 205, 0.2); }
+    .line.strokeColor_1,
+    .radar.strokeColor_1 {
+      color: #97bbcd; }
+    .line.pointColor_1,
+    .radar.pointColor_1 {
+      color: #97bbcd; }
+    .line.pointStrokeColor_1,
+    .radar.pointStrokeColor_1 {
+      color: white; }
+    .line.pointHighlightFill_1,
+    .radar.pointHighlightFill_1 {
+      color: white; }
+    .line.pointHighlightStroke_1,
+    .radar.pointHighlightStroke_1 {
+      color: #97bbcd; }
+    
+    .bar.fillColor_1 {
+      color: rgba(151, 187, 205, 0.5); }
+    .bar.strokeColor_1 {
+      color: rgba(151, 187, 205, 0.8); }
+    .bar.highlightFill_1 {
+      color: rgba(151, 187, 205, 0.75); }
+    .bar.highlightStroke_1 {
+      color: #97bbcd; }
+    
+    .pie.color_1,
+    .polar.color_1,
+    .doughnut.color_1 {
+      color: #97bbcd; }
+    .pie.highlight_1,
+    .polar.highlight_1,
+    .doughnut.highlight_1 {
+      color: #a8c6d5; }
+    ```
+ 
