@@ -97,3 +97,10 @@ function parse_css_colors(chart_id, chart_type, data){
     return dataIsString ? JSON.stringify(data): data;
 
 }
+//Fix for IE not having the startsWith Function.
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+  };
+}
