@@ -1,46 +1,87 @@
 @import 'chartjs-sass';
 
-.chart-legend,
+// Default colors - random thereafter, unless specified (from angularjs imlementation)
+$Blue: rgb(151,187,205);
+$Light_Grey: rgb(220,220,220);
+$Red: rgb(247,70,74);
+$Green: rgb(70,191,189);
+$Yellow: rgb(253,180,92);
+$Grey: rgb(148,159,177);
+$Dark_Grey: rgb(77,83,96);
+$White: rgb(255,255,255);
+
+//Set default colors - from angluar js version of chartjs - random colors thereafter for 10 in total
+@include chart_colors(($Blue, $Light_Grey, $Red, $Green, $Yellow, $Grey, $Dark_Grey), 10);
+
+//Set Float left on pie/radar/polar/doughnut so that legend is on the right
+.pie-chart,
+.radar-chart,
+.polararea-chart,
+.doughnut-chart{
+    float: left;
+}
+
+//For all chart Legends
 .bar-legend,
 .line-legend,
 .pie-legend,
 .radar-legend,
 .polararea-legend,
-.doughnut-legend {
-	list-style-type: none;
-	margin-top: 5px;
-	text-align: center;
-	/* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
-	-webkit-padding-start: 0;
-	/* Webkit */
-	-moz-padding-start: 0;
-	/* Mozilla */
-	padding-left: 0;
-	/* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */
-	li {
-		display: inline-block;
-		white-space: nowrap;
-		position: relative;
-		margin-bottom: 4px;
-		border-radius: 5px;
-		padding: 2px 8px 2px 28px;
-		font-size: smaller;
-		cursor: default;
+.doughnut-legend,
+.chart-legend
+ {
+    list-style-type: none;
+    margin-top: 5px;
 
-		//Span block for legend 'icon'
-		span {
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 20px;
-			height: 20px;
-			border-radius: 5px;
-		}
-	}
+    /* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
+    -webkit-padding-start: 0;
+    /* Webkit */
+    -moz-padding-start: 0;
+    /* Mozilla */
+    padding-left: 0;
+    /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */
+
+    li {
+        white-space: nowrap;
+        position: relative;
+        margin-bottom: 4px;
+        border-radius: 5px;
+        padding: 2px 8px 2px 28px;
+        font-size: smaller;
+        cursor: default;
+
+        //Span block for legend 'icon'
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+        }
+    }
 }
-//Set default colors - from angluar js version of chartjs - random colors thereafter for 10 in total
-@include chart_colors(($Blue, $Light_Grey, $Red, $Green, $Yellow, $Grey, $Dark_Grey), 10);
+//Display bar/line legend horizontally under the chart
+.bar-legend,
+.line-legend {
+    text-align: center;
+    li {
+        display: inline-block;
+    }
+}
+//Display pie/radar/polar/doughnut legend vertically on the right of the chart
+.pie-legend,
+.radar-legend,
+.polararea-legend,
+.doughnut-legend {
+    float: right;
+    text-align: left;
+    li {
+        display: list-item;
+    }
+}
+
 
 
 

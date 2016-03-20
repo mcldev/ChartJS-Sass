@@ -4,53 +4,6 @@
      Combine with chartjs-sass.js + chartjs-sass-default.css + own custom css
  */
 /* Mixin to define each chart element based on a base color */
-.chart-legend,
-.bar-legend,
-.line-legend,
-.pie-legend,
-.radar-legend,
-.polararea-legend,
-.doughnut-legend {
-  list-style-type: none;
-  margin-top: 5px;
-  text-align: center;
-  /* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
-  -webkit-padding-start: 0;
-  /* Webkit */
-  -moz-padding-start: 0;
-  /* Mozilla */
-  padding-left: 0;
-  /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */ }
-  .chart-legend li,
-  .bar-legend li,
-  .line-legend li,
-  .pie-legend li,
-  .radar-legend li,
-  .polararea-legend li,
-  .doughnut-legend li {
-    display: inline-block;
-    white-space: nowrap;
-    position: relative;
-    margin-bottom: 4px;
-    border-radius: 5px;
-    padding: 2px 8px 2px 28px;
-    font-size: smaller;
-    cursor: default; }
-    .chart-legend li span,
-    .bar-legend li span,
-    .line-legend li span,
-    .pie-legend li span,
-    .radar-legend li span,
-    .polararea-legend li span,
-    .doughnut-legend li span {
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 5px; }
-
 .line.fillColor_1,
 .radar.fillColor_1 {
   color: rgba(151, 187, 205, 0.2); }
@@ -333,13 +286,13 @@
 
 .line.fillColor_8,
 .radar.fillColor_8 {
-  color: rgba(212, 189, 242, 0.2); }
+  color: rgba(47, 11, 19, 0.2); }
 .line.strokeColor_8,
 .radar.strokeColor_8 {
-  color: #d4bdf2; }
+  color: #2f0b13; }
 .line.pointColor_8,
 .radar.pointColor_8 {
-  color: #d4bdf2; }
+  color: #2f0b13; }
 .line.pointStrokeColor_8,
 .radar.pointStrokeColor_8 {
   color: white; }
@@ -348,38 +301,38 @@
   color: white; }
 .line.pointHighlightStroke_8,
 .radar.pointHighlightStroke_8 {
-  color: #d4bdf2; }
+  color: #2f0b13; }
 
 .bar.fillColor_8 {
-  color: rgba(212, 189, 242, 0.5); }
+  color: rgba(47, 11, 19, 0.5); }
 .bar.strokeColor_8 {
-  color: rgba(212, 189, 242, 0.8); }
+  color: rgba(47, 11, 19, 0.8); }
 .bar.highlightFill_8 {
-  color: rgba(212, 189, 242, 0.75); }
+  color: rgba(47, 11, 19, 0.75); }
 .bar.highlightStroke_8 {
-  color: #d4bdf2; }
+  color: #2f0b13; }
 
 .pie.color_8,
 .polar.color_8,
 .doughnut.color_8 {
-  color: #d4bdf2; }
+  color: #2f0b13; }
 .pie.highlight_8,
 .polar.highlight_8,
 .doughnut.highlight_8 {
-  color: #e2d2f6; }
+  color: #44101b; }
 
 .legend_icon_8 {
-  background: #d4bdf2; }
+  background: #2f0b13; }
 
 .line.fillColor_9,
 .radar.fillColor_9 {
-  color: rgba(214, 150, 126, 0.2); }
+  color: rgba(68, 173, 154, 0.2); }
 .line.strokeColor_9,
 .radar.strokeColor_9 {
-  color: #d6967e; }
+  color: #44ad9a; }
 .line.pointColor_9,
 .radar.pointColor_9 {
-  color: #d6967e; }
+  color: #44ad9a; }
 .line.pointStrokeColor_9,
 .radar.pointStrokeColor_9 {
   color: white; }
@@ -388,38 +341,38 @@
   color: white; }
 .line.pointHighlightStroke_9,
 .radar.pointHighlightStroke_9 {
-  color: #d6967e; }
+  color: #44ad9a; }
 
 .bar.fillColor_9 {
-  color: rgba(214, 150, 126, 0.5); }
+  color: rgba(68, 173, 154, 0.5); }
 .bar.strokeColor_9 {
-  color: rgba(214, 150, 126, 0.8); }
+  color: rgba(68, 173, 154, 0.8); }
 .bar.highlightFill_9 {
-  color: rgba(214, 150, 126, 0.75); }
+  color: rgba(68, 173, 154, 0.75); }
 .bar.highlightStroke_9 {
-  color: #d6967e; }
+  color: #44ad9a; }
 
 .pie.color_9,
 .polar.color_9,
 .doughnut.color_9 {
-  color: #d6967e; }
+  color: #44ad9a; }
 .pie.highlight_9,
 .polar.highlight_9,
 .doughnut.highlight_9 {
-  color: #dca691; }
+  color: #50baa7; }
 
 .legend_icon_9 {
-  background: #d6967e; }
+  background: #44ad9a; }
 
 .line.fillColor_10,
 .radar.fillColor_10 {
-  color: rgba(76, 189, 8, 0.2); }
+  color: rgba(3, 65, 7, 0.2); }
 .line.strokeColor_10,
 .radar.strokeColor_10 {
-  color: #4cbd08; }
+  color: #034107; }
 .line.pointColor_10,
 .radar.pointColor_10 {
-  color: #4cbd08; }
+  color: #034107; }
 .line.pointStrokeColor_10,
 .radar.pointStrokeColor_10 {
   color: white; }
@@ -428,27 +381,97 @@
   color: white; }
 .line.pointHighlightStroke_10,
 .radar.pointHighlightStroke_10 {
-  color: #4cbd08; }
+  color: #034107; }
 
 .bar.fillColor_10 {
-  color: rgba(76, 189, 8, 0.5); }
+  color: rgba(3, 65, 7, 0.5); }
 .bar.strokeColor_10 {
-  color: rgba(76, 189, 8, 0.8); }
+  color: rgba(3, 65, 7, 0.8); }
 .bar.highlightFill_10 {
-  color: rgba(76, 189, 8, 0.75); }
+  color: rgba(3, 65, 7, 0.75); }
 .bar.highlightStroke_10 {
-  color: #4cbd08; }
+  color: #034107; }
 
 .pie.color_10,
 .polar.color_10,
 .doughnut.color_10 {
-  color: #4cbd08; }
+  color: #034107; }
 .pie.highlight_10,
 .polar.highlight_10,
 .doughnut.highlight_10 {
-  color: #56d509; }
+  color: #04590a; }
 
 .legend_icon_10 {
-  background: #4cbd08; }
+  background: #034107; }
+
+.pie-chart,
+.radar-chart,
+.polararea-chart,
+.doughnut-chart {
+  float: left; }
+
+.bar-legend,
+.line-legend,
+.pie-legend,
+.radar-legend,
+.polararea-legend,
+.doughnut-legend,
+.chart-legend {
+  list-style-type: none;
+  margin-top: 5px;
+  /* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
+  -webkit-padding-start: 0;
+  /* Webkit */
+  -moz-padding-start: 0;
+  /* Mozilla */
+  padding-left: 0;
+  /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */ }
+  .bar-legend li,
+  .line-legend li,
+  .pie-legend li,
+  .radar-legend li,
+  .polararea-legend li,
+  .doughnut-legend li,
+  .chart-legend li {
+    white-space: nowrap;
+    position: relative;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    padding: 2px 8px 2px 28px;
+    font-size: smaller;
+    cursor: default; }
+    .bar-legend li span,
+    .line-legend li span,
+    .pie-legend li span,
+    .radar-legend li span,
+    .polararea-legend li span,
+    .doughnut-legend li span,
+    .chart-legend li span {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px; }
+
+.bar-legend,
+.line-legend {
+  text-align: center; }
+  .bar-legend li,
+  .line-legend li {
+    display: inline-block; }
+
+.pie-legend,
+.radar-legend,
+.polararea-legend,
+.doughnut-legend {
+  float: right;
+  text-align: left; }
+  .pie-legend li,
+  .radar-legend li,
+  .polararea-legend li,
+  .doughnut-legend li {
+    display: list-item; }
 
 /*# sourceMappingURL=chartjs-sass-default.css.map */
