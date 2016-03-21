@@ -5,6 +5,17 @@
  */
 
 
+// Default colors - random thereafter, unless specified (from angularjs imlementation)
+$Blue: rgb(151,187,205);
+$Light_Grey: rgb(220,220,220);
+$Red: rgb(247,70,74);
+$Green: rgb(70,191,189);
+$Yellow: rgb(253,180,92);
+$Grey: rgb(148,159,177);
+$Dark_Grey: rgb(77,83,96);
+$White: rgb(255,255,255);
+
+
 /* Mixin to define each chart element based on a base color */
 @mixin chart_colors($base_colors:null, $num_required:null) {
 
@@ -70,4 +81,15 @@
     $green: random(256)-1;
     $blue: random(256)-1;
     @return rgb($red, $green, $blue);
+}
+
+%clearfix {
+    &:after {
+        content: " ";
+        visibility: hidden;
+        display: block;
+        height: 0;
+        overflow: auto;
+        clear: both;
+    }
 }

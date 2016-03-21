@@ -4,6 +4,13 @@
      Combine with chartjs-sass.js + chartjs-sass-default.css + own custom css
  */
 /* Mixin to define each chart element based on a base color */
+.chart-container {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex; }
+
 .line.fillColor_1,
 .radar.fillColor_1 {
   color: rgba(151, 187, 205, 0.2); }
@@ -286,13 +293,13 @@
 
 .line.fillColor_8,
 .radar.fillColor_8 {
-  color: rgba(47, 11, 19, 0.2); }
+  color: rgba(172, 129, 77, 0.2); }
 .line.strokeColor_8,
 .radar.strokeColor_8 {
-  color: #2f0b13; }
+  color: #ac814d; }
 .line.pointColor_8,
 .radar.pointColor_8 {
-  color: #2f0b13; }
+  color: #ac814d; }
 .line.pointStrokeColor_8,
 .radar.pointStrokeColor_8 {
   color: white; }
@@ -301,38 +308,38 @@
   color: white; }
 .line.pointHighlightStroke_8,
 .radar.pointHighlightStroke_8 {
-  color: #2f0b13; }
+  color: #ac814d; }
 
 .bar.fillColor_8 {
-  color: rgba(47, 11, 19, 0.5); }
+  color: rgba(172, 129, 77, 0.5); }
 .bar.strokeColor_8 {
-  color: rgba(47, 11, 19, 0.8); }
+  color: rgba(172, 129, 77, 0.8); }
 .bar.highlightFill_8 {
-  color: rgba(47, 11, 19, 0.75); }
+  color: rgba(172, 129, 77, 0.75); }
 .bar.highlightStroke_8 {
-  color: #2f0b13; }
+  color: #ac814d; }
 
 .pie.color_8,
 .polar.color_8,
 .doughnut.color_8 {
-  color: #2f0b13; }
+  color: #ac814d; }
 .pie.highlight_8,
 .polar.highlight_8,
 .doughnut.highlight_8 {
-  color: #44101b; }
+  color: #b68e5c; }
 
 .legend_icon_8 {
-  background: #2f0b13; }
+  background: #ac814d; }
 
 .line.fillColor_9,
 .radar.fillColor_9 {
-  color: rgba(68, 173, 154, 0.2); }
+  color: rgba(147, 16, 188, 0.2); }
 .line.strokeColor_9,
 .radar.strokeColor_9 {
-  color: #44ad9a; }
+  color: #9310bc; }
 .line.pointColor_9,
 .radar.pointColor_9 {
-  color: #44ad9a; }
+  color: #9310bc; }
 .line.pointStrokeColor_9,
 .radar.pointStrokeColor_9 {
   color: white; }
@@ -341,38 +348,38 @@
   color: white; }
 .line.pointHighlightStroke_9,
 .radar.pointHighlightStroke_9 {
-  color: #44ad9a; }
+  color: #9310bc; }
 
 .bar.fillColor_9 {
-  color: rgba(68, 173, 154, 0.5); }
+  color: rgba(147, 16, 188, 0.5); }
 .bar.strokeColor_9 {
-  color: rgba(68, 173, 154, 0.8); }
+  color: rgba(147, 16, 188, 0.8); }
 .bar.highlightFill_9 {
-  color: rgba(68, 173, 154, 0.75); }
+  color: rgba(147, 16, 188, 0.75); }
 .bar.highlightStroke_9 {
-  color: #44ad9a; }
+  color: #9310bc; }
 
 .pie.color_9,
 .polar.color_9,
 .doughnut.color_9 {
-  color: #44ad9a; }
+  color: #9310bc; }
 .pie.highlight_9,
 .polar.highlight_9,
 .doughnut.highlight_9 {
-  color: #50baa7; }
+  color: #a512d4; }
 
 .legend_icon_9 {
-  background: #44ad9a; }
+  background: #9310bc; }
 
 .line.fillColor_10,
 .radar.fillColor_10 {
-  color: rgba(3, 65, 7, 0.2); }
+  color: rgba(174, 85, 14, 0.2); }
 .line.strokeColor_10,
 .radar.strokeColor_10 {
-  color: #034107; }
+  color: #ae550e; }
 .line.pointColor_10,
 .radar.pointColor_10 {
-  color: #034107; }
+  color: #ae550e; }
 .line.pointStrokeColor_10,
 .radar.pointStrokeColor_10 {
   color: white; }
@@ -381,42 +388,106 @@
   color: white; }
 .line.pointHighlightStroke_10,
 .radar.pointHighlightStroke_10 {
-  color: #034107; }
+  color: #ae550e; }
 
 .bar.fillColor_10 {
-  color: rgba(3, 65, 7, 0.5); }
+  color: rgba(174, 85, 14, 0.5); }
 .bar.strokeColor_10 {
-  color: rgba(3, 65, 7, 0.8); }
+  color: rgba(174, 85, 14, 0.8); }
 .bar.highlightFill_10 {
-  color: rgba(3, 65, 7, 0.75); }
+  color: rgba(174, 85, 14, 0.75); }
 .bar.highlightStroke_10 {
-  color: #034107; }
+  color: #ae550e; }
 
 .pie.color_10,
 .polar.color_10,
 .doughnut.color_10 {
-  color: #034107; }
+  color: #ae550e; }
 .pie.highlight_10,
 .polar.highlight_10,
 .doughnut.highlight_10 {
-  color: #04590a; }
+  color: #c66110; }
 
 .legend_icon_10 {
-  background: #034107; }
+  background: #ae550e; }
 
+.line-chart,
+.bar-chart,
 .pie-chart,
 .radar-chart,
 .polararea-chart,
 .doughnut-chart {
-  float: left; }
+  display: inline-block; }
 
-.bar-legend,
+.chart-container {
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: none;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center; }
+  .chart-container.left, .chart-container.right {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center; }
+    .chart-container.left .chart-legend li, .chart-container.right .chart-legend li {
+      display: list-item; }
+  .chart-container.top .chart-legend, .chart-container.bottom .chart-legend {
+    text-align: center; }
+    .chart-container.top .chart-legend li, .chart-container.bottom .chart-legend li {
+      display: inline-block; }
+  .chart-container .chart,
+  .chart-container .chart-legend {
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: none;
+    flex-wrap: nowrap; }
+  .chart-container.left {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse; }
+    .chart-container.left .chart-legend {
+      margin-right: 5%; }
+  .chart-container.right {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row; }
+    .chart-container.right .chart-legend {
+      margin-left: 5%; }
+  .chart-container.top {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; }
+  .chart-container.bottom {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .chart-container.bottom .chart-legend {
+      margin-top: 5%; }
+
 .line-legend,
+.bar-legend,
 .pie-legend,
 .radar-legend,
 .polararea-legend,
-.doughnut-legend,
-.chart-legend {
+.doughnut-legend {
   list-style-type: none;
   margin-top: 5px;
   /* NOTE: Browsers automatically add 40px of padding-left to all lists, so we should offset that, otherwise the legend is off-center */
@@ -426,13 +497,12 @@
   /* Mozilla */
   padding-left: 0;
   /* IE (handles all cases, really, but we should also include the vendor-specific properties just to be safe) */ }
-  .bar-legend li,
   .line-legend li,
+  .bar-legend li,
   .pie-legend li,
   .radar-legend li,
   .polararea-legend li,
-  .doughnut-legend li,
-  .chart-legend li {
+  .doughnut-legend li {
     white-space: nowrap;
     position: relative;
     margin-bottom: 4px;
@@ -440,13 +510,12 @@
     padding: 2px 8px 2px 28px;
     font-size: smaller;
     cursor: default; }
-    .bar-legend li span,
     .line-legend li span,
+    .bar-legend li span,
     .pie-legend li span,
     .radar-legend li span,
     .polararea-legend li span,
-    .doughnut-legend li span,
-    .chart-legend li span {
+    .doughnut-legend li span {
       display: block;
       position: absolute;
       left: 0;
@@ -454,24 +523,5 @@
       width: 20px;
       height: 20px;
       border-radius: 5px; }
-
-.bar-legend,
-.line-legend {
-  text-align: center; }
-  .bar-legend li,
-  .line-legend li {
-    display: inline-block; }
-
-.pie-legend,
-.radar-legend,
-.polararea-legend,
-.doughnut-legend {
-  float: right;
-  text-align: left; }
-  .pie-legend li,
-  .radar-legend li,
-  .polararea-legend li,
-  .doughnut-legend li {
-    display: list-item; }
 
 /*# sourceMappingURL=chartjs-sass-default.css.map */

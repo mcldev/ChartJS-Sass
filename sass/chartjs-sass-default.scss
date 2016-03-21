@@ -1,34 +1,93 @@
-@import 'chartjs-sass';
-
-// Default colors - random thereafter, unless specified (from angularjs imlementation)
-$Blue: rgb(151,187,205);
-$Light_Grey: rgb(220,220,220);
-$Red: rgb(247,70,74);
-$Green: rgb(70,191,189);
-$Yellow: rgb(253,180,92);
-$Grey: rgb(148,159,177);
-$Dark_Grey: rgb(77,83,96);
-$White: rgb(255,255,255);
+@import 'chartjs-sass.scss', '_flexbox.scss';
 
 //Set default colors - from angluar js version of chartjs - random colors thereafter for 10 in total
 @include chart_colors(($Blue, $Light_Grey, $Red, $Green, $Yellow, $Grey, $Dark_Grey), 10);
 
-//Set Float left on pie/radar/polar/doughnut so that legend is on the right
+.line-chart,
+.bar-chart,
 .pie-chart,
 .radar-chart,
 .polararea-chart,
 .doughnut-chart{
-    float: left;
+    display: inline-block;
 }
 
-//For all chart Legends
-.bar-legend,
+// To position the Chart Legend wrap the .chart and .chart-legend in .chart-container
+.chart-container {
+
+    //Set Margin variables
+    $horizontal-margin: 5%;
+    $vertical-margin: 5%;
+
+    //Set as inline flex
+    @extend %inline-flex;
+
+    //Stop Wrapping
+    @include flex-wrap(nowrap);
+
+    //Justify content to the center of the container
+    @include justify-content(center);
+
+    //Align the items
+    &.left,
+    &.right {
+        @include align-items(center);
+        .chart-legend {
+            li {
+                display: list-item;
+            }
+        }
+    }
+
+    //Display the legend horizontally (inline) for top/bottom
+    &.top,
+    &.bottom {
+        .chart-legend {
+            text-align: center;
+            li {
+                display: inline-block;
+            }
+        }
+    }
+
+    //Set chart and legend as inline-block so that legend can be on the top/bottom/side
+    .chart,
+    .chart-legend {
+        //display: inline-block;
+        @include flex-wrap(nowrap);
+    }
+
+    //Reverse order for top or left position
+    &.left {
+        @include flex-direction(row-reverse);
+        .chart-legend {
+            margin-right: $horizontal-margin;
+        }
+    }
+    &.right {
+        @include flex-direction(row);
+        .chart-legend {
+            margin-left: $horizontal-margin;
+        }
+    }
+    &.top {
+        @include flex-direction(column-reverse);
+    }
+    &.bottom {
+        @include flex-direction(column);
+        .chart-legend {
+            margin-top: $vertical-margin;
+        }
+    }
+}
+
+//For all chart legend ul lists
 .line-legend,
+.bar-legend,
 .pie-legend,
 .radar-legend,
 .polararea-legend,
-.doughnut-legend,
-.chart-legend
+.doughnut-legend
  {
     list-style-type: none;
     margin-top: 5px;
@@ -62,25 +121,8 @@ $White: rgb(255,255,255);
         }
     }
 }
-//Display bar/line legend horizontally under the chart
-.bar-legend,
-.line-legend {
-    text-align: center;
-    li {
-        display: inline-block;
-    }
-}
-//Display pie/radar/polar/doughnut legend vertically on the right of the chart
-.pie-legend,
-.radar-legend,
-.polararea-legend,
-.doughnut-legend {
-    float: right;
-    text-align: left;
-    li {
-        display: list-item;
-    }
-}
+
+
 
 
 
