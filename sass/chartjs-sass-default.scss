@@ -11,13 +11,15 @@
 .doughnut-chart{
     display: inline-block;
 }
-
+.chart-title {
+    display: block;
+}
 // To position the Chart Legend wrap the .chart and .chart-legend in .chart-container
 .chart-container {
 
     //Set Margin variables
-    $horizontal-margin: 5%;
-    $vertical-margin: 5%;
+    $horizontal-margin: 10px;
+    $vertical-margin: 10px;
 
     //Set as inline flex
     @extend %inline-flex;
@@ -50,10 +52,9 @@
         }
     }
 
-    //Set chart and legend as inline-block so that legend can be on the top/bottom/side
+    //Set chart and legend as no wrap to force to specified side
     .chart,
     .chart-legend {
-        //display: inline-block;
         @include flex-wrap(nowrap);
     }
 

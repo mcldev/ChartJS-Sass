@@ -61,7 +61,7 @@ $White: rgb(255,255,255);
 		}
 		// Polar + Pie + Doughnut - lighten highlight color
 		#{$pid}.pie,
-		#{$pid}.polar,
+		#{$pid}.polararea,
 		#{$pid}.doughnut {
 			&.color_#{$i}  { color: $base_color; }
 			&.highlight_#{$i}  { color: lighten($base_color, 5%); }

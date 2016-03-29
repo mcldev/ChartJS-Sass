@@ -7,7 +7,7 @@ CHART_TYPES = {
     LINE: 'line',
     BAR: 'bar',
     RADAR: 'radar',
-    POLAR: 'polar',
+    POLAR: 'polararea',
     DOUGHNUT: 'doughnut',
     PIE: 'pie'
 };

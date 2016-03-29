@@ -40,11 +40,11 @@
   color: #97bbcd; }
 
 .pie.color_1,
-.polar.color_1,
+.polararea.color_1,
 .doughnut.color_1 {
   color: #97bbcd; }
 .pie.highlight_1,
-.polar.highlight_1,
+.polararea.highlight_1,
 .doughnut.highlight_1 {
   color: #a8c6d5; }
 
@@ -80,11 +80,11 @@
   color: gainsboro; }
 
 .pie.color_2,
-.polar.color_2,
+.polararea.color_2,
 .doughnut.color_2 {
   color: gainsboro; }
 .pie.highlight_2,
-.polar.highlight_2,
+.polararea.highlight_2,
 .doughnut.highlight_2 {
   color: #e9e9e9; }
 
@@ -120,11 +120,11 @@
   color: #f7464a; }
 
 .pie.color_3,
-.polar.color_3,
+.polararea.color_3,
 .doughnut.color_3 {
   color: #f7464a; }
 .pie.highlight_3,
-.polar.highlight_3,
+.polararea.highlight_3,
 .doughnut.highlight_3 {
   color: #f85e62; }
 
@@ -160,11 +160,11 @@
   color: #46bfbd; }
 
 .pie.color_4,
-.polar.color_4,
+.polararea.color_4,
 .doughnut.color_4 {
   color: #46bfbd; }
 .pie.highlight_4,
-.polar.highlight_4,
+.polararea.highlight_4,
 .doughnut.highlight_4 {
   color: #59c6c4; }
 
@@ -200,11 +200,11 @@
   color: #fdb45c; }
 
 .pie.color_5,
-.polar.color_5,
+.polararea.color_5,
 .doughnut.color_5 {
   color: #fdb45c; }
 .pie.highlight_5,
-.polar.highlight_5,
+.polararea.highlight_5,
 .doughnut.highlight_5 {
   color: #fdc075; }
 
@@ -240,11 +240,11 @@
   color: #949fb1; }
 
 .pie.color_6,
-.polar.color_6,
+.polararea.color_6,
 .doughnut.color_6 {
   color: #949fb1; }
 .pie.highlight_6,
-.polar.highlight_6,
+.polararea.highlight_6,
 .doughnut.highlight_6 {
   color: #a3acbc; }
 
@@ -280,11 +280,11 @@
   color: #4d5360; }
 
 .pie.color_7,
-.polar.color_7,
+.polararea.color_7,
 .doughnut.color_7 {
   color: #4d5360; }
 .pie.highlight_7,
-.polar.highlight_7,
+.polararea.highlight_7,
 .doughnut.highlight_7 {
   color: #585f6e; }
 
@@ -293,13 +293,13 @@
 
 .line.fillColor_8,
 .radar.fillColor_8 {
-  color: rgba(172, 129, 77, 0.2); }
+  color: rgba(215, 64, 248, 0.2); }
 .line.strokeColor_8,
 .radar.strokeColor_8 {
-  color: #ac814d; }
+  color: #d740f8; }
 .line.pointColor_8,
 .radar.pointColor_8 {
-  color: #ac814d; }
+  color: #d740f8; }
 .line.pointStrokeColor_8,
 .radar.pointStrokeColor_8 {
   color: white; }
@@ -308,38 +308,38 @@
   color: white; }
 .line.pointHighlightStroke_8,
 .radar.pointHighlightStroke_8 {
-  color: #ac814d; }
+  color: #d740f8; }
 
 .bar.fillColor_8 {
-  color: rgba(172, 129, 77, 0.5); }
+  color: rgba(215, 64, 248, 0.5); }
 .bar.strokeColor_8 {
-  color: rgba(172, 129, 77, 0.8); }
+  color: rgba(215, 64, 248, 0.8); }
 .bar.highlightFill_8 {
-  color: rgba(172, 129, 77, 0.75); }
+  color: rgba(215, 64, 248, 0.75); }
 .bar.highlightStroke_8 {
-  color: #ac814d; }
+  color: #d740f8; }
 
 .pie.color_8,
-.polar.color_8,
+.polararea.color_8,
 .doughnut.color_8 {
-  color: #ac814d; }
+  color: #d740f8; }
 .pie.highlight_8,
-.polar.highlight_8,
+.polararea.highlight_8,
 .doughnut.highlight_8 {
-  color: #b68e5c; }
+  color: #dc59f9; }
 
 .legend_icon_8 {
-  background: #ac814d; }
+  background: #d740f8; }
 
 .line.fillColor_9,
 .radar.fillColor_9 {
-  color: rgba(147, 16, 188, 0.2); }
+  color: rgba(154, 196, 138, 0.2); }
 .line.strokeColor_9,
 .radar.strokeColor_9 {
-  color: #9310bc; }
+  color: #9ac48a; }
 .line.pointColor_9,
 .radar.pointColor_9 {
-  color: #9310bc; }
+  color: #9ac48a; }
 .line.pointStrokeColor_9,
 .radar.pointStrokeColor_9 {
   color: white; }
@@ -348,38 +348,38 @@
   color: white; }
 .line.pointHighlightStroke_9,
 .radar.pointHighlightStroke_9 {
-  color: #9310bc; }
+  color: #9ac48a; }
 
 .bar.fillColor_9 {
-  color: rgba(147, 16, 188, 0.5); }
+  color: rgba(154, 196, 138, 0.5); }
 .bar.strokeColor_9 {
-  color: rgba(147, 16, 188, 0.8); }
+  color: rgba(154, 196, 138, 0.8); }
 .bar.highlightFill_9 {
-  color: rgba(147, 16, 188, 0.75); }
+  color: rgba(154, 196, 138, 0.75); }
 .bar.highlightStroke_9 {
-  color: #9310bc; }
+  color: #9ac48a; }
 
 .pie.color_9,
-.polar.color_9,
+.polararea.color_9,
 .doughnut.color_9 {
-  color: #9310bc; }
+  color: #9ac48a; }
 .pie.highlight_9,
-.polar.highlight_9,
+.polararea.highlight_9,
 .doughnut.highlight_9 {
-  color: #a512d4; }
+  color: #a9cd9b; }
 
 .legend_icon_9 {
-  background: #9310bc; }
+  background: #9ac48a; }
 
 .line.fillColor_10,
 .radar.fillColor_10 {
-  color: rgba(174, 85, 14, 0.2); }
+  color: rgba(49, 164, 155, 0.2); }
 .line.strokeColor_10,
 .radar.strokeColor_10 {
-  color: #ae550e; }
+  color: #31a49b; }
 .line.pointColor_10,
 .radar.pointColor_10 {
-  color: #ae550e; }
+  color: #31a49b; }
 .line.pointStrokeColor_10,
 .radar.pointStrokeColor_10 {
   color: white; }
@@ -388,28 +388,28 @@
   color: white; }
 .line.pointHighlightStroke_10,
 .radar.pointHighlightStroke_10 {
-  color: #ae550e; }
+  color: #31a49b; }
 
 .bar.fillColor_10 {
-  color: rgba(174, 85, 14, 0.5); }
+  color: rgba(49, 164, 155, 0.5); }
 .bar.strokeColor_10 {
-  color: rgba(174, 85, 14, 0.8); }
+  color: rgba(49, 164, 155, 0.8); }
 .bar.highlightFill_10 {
-  color: rgba(174, 85, 14, 0.75); }
+  color: rgba(49, 164, 155, 0.75); }
 .bar.highlightStroke_10 {
-  color: #ae550e; }
+  color: #31a49b; }
 
 .pie.color_10,
-.polar.color_10,
+.polararea.color_10,
 .doughnut.color_10 {
-  color: #ae550e; }
+  color: #31a49b; }
 .pie.highlight_10,
-.polar.highlight_10,
+.polararea.highlight_10,
 .doughnut.highlight_10 {
-  color: #c66110; }
+  color: #37b8ae; }
 
 .legend_icon_10 {
-  background: #ae550e; }
+  background: #31a49b; }
 
 .line-chart,
 .bar-chart,
@@ -418,6 +418,9 @@
 .polararea-chart,
 .doughnut-chart {
   display: inline-block; }
+
+.chart-title {
+  display: block; }
 
 .chart-container {
   -webkit-flex-wrap: nowrap;
@@ -455,7 +458,7 @@
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
     .chart-container.left .chart-legend {
-      margin-right: 5%; }
+      margin-right: 10px; }
   .chart-container.right {
     -webkit-box-direction: normal;
     -webkit-box-orient: horizontal;
@@ -464,7 +467,7 @@
     -ms-flex-direction: row;
     flex-direction: row; }
     .chart-container.right .chart-legend {
-      margin-left: 5%; }
+      margin-left: 10px; }
   .chart-container.top {
     -webkit-box-direction: reverse;
     -webkit-box-orient: vertical;
@@ -480,7 +483,7 @@
     -ms-flex-direction: column;
     flex-direction: column; }
     .chart-container.bottom .chart-legend {
-      margin-top: 5%; }
+      margin-top: 10px; }
 
 .line-legend,
 .bar-legend,
