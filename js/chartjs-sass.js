@@ -80,12 +80,14 @@ function parse_css_colors(chart_id, chart_type, data){
                 var theColor = null;
 
 				//Add the Class, get the computed colors, then remove the class
+                var tempClass = $(chart_selector).attr('class');
 				$(chart_selector)
                     .addClass(theClass)
                     .removeClass(function(idx){
 				        theColor = $(this).css('color');
                         return theClass;
                     });
+                $(chart_selector).attr('class', tempClass);
 
 				//Add/change the computed color to the data
 				dataset[theColorType] = theColor;
