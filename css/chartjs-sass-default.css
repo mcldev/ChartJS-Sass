@@ -293,13 +293,13 @@
 
 .line.fillColor_8,
 .radar.fillColor_8 {
-  color: rgba(215, 64, 248, 0.2); }
+  color: rgba(18, 34, 86, 0.2); }
 .line.strokeColor_8,
 .radar.strokeColor_8 {
-  color: #d740f8; }
+  color: #122256; }
 .line.pointColor_8,
 .radar.pointColor_8 {
-  color: #d740f8; }
+  color: #122256; }
 .line.pointStrokeColor_8,
 .radar.pointStrokeColor_8 {
   color: white; }
@@ -308,38 +308,38 @@
   color: white; }
 .line.pointHighlightStroke_8,
 .radar.pointHighlightStroke_8 {
-  color: #d740f8; }
+  color: #122256; }
 
 .bar.fillColor_8 {
-  color: rgba(215, 64, 248, 0.5); }
+  color: rgba(18, 34, 86, 0.5); }
 .bar.strokeColor_8 {
-  color: rgba(215, 64, 248, 0.8); }
+  color: rgba(18, 34, 86, 0.8); }
 .bar.highlightFill_8 {
-  color: rgba(215, 64, 248, 0.75); }
+  color: rgba(18, 34, 86, 0.75); }
 .bar.highlightStroke_8 {
-  color: #d740f8; }
+  color: #122256; }
 
 .pie.color_8,
 .polararea.color_8,
 .doughnut.color_8 {
-  color: #d740f8; }
+  color: #122256; }
 .pie.highlight_8,
 .polararea.highlight_8,
 .doughnut.highlight_8 {
-  color: #dc59f9; }
+  color: #162a6b; }
 
 .legend_icon_8 {
-  background: #d740f8; }
+  background: #122256; }
 
 .line.fillColor_9,
 .radar.fillColor_9 {
-  color: rgba(154, 196, 138, 0.2); }
+  color: rgba(146, 43, 122, 0.2); }
 .line.strokeColor_9,
 .radar.strokeColor_9 {
-  color: #9ac48a; }
+  color: #922b7a; }
 .line.pointColor_9,
 .radar.pointColor_9 {
-  color: #9ac48a; }
+  color: #922b7a; }
 .line.pointStrokeColor_9,
 .radar.pointStrokeColor_9 {
   color: white; }
@@ -348,38 +348,38 @@
   color: white; }
 .line.pointHighlightStroke_9,
 .radar.pointHighlightStroke_9 {
-  color: #9ac48a; }
+  color: #922b7a; }
 
 .bar.fillColor_9 {
-  color: rgba(154, 196, 138, 0.5); }
+  color: rgba(146, 43, 122, 0.5); }
 .bar.strokeColor_9 {
-  color: rgba(154, 196, 138, 0.8); }
+  color: rgba(146, 43, 122, 0.8); }
 .bar.highlightFill_9 {
-  color: rgba(154, 196, 138, 0.75); }
+  color: rgba(146, 43, 122, 0.75); }
 .bar.highlightStroke_9 {
-  color: #9ac48a; }
+  color: #922b7a; }
 
 .pie.color_9,
 .polararea.color_9,
 .doughnut.color_9 {
-  color: #9ac48a; }
+  color: #922b7a; }
 .pie.highlight_9,
 .polararea.highlight_9,
 .doughnut.highlight_9 {
-  color: #a9cd9b; }
+  color: #a6318a; }
 
 .legend_icon_9 {
-  background: #9ac48a; }
+  background: #922b7a; }
 
 .line.fillColor_10,
 .radar.fillColor_10 {
-  color: rgba(49, 164, 155, 0.2); }
+  color: rgba(6, 205, 192, 0.2); }
 .line.strokeColor_10,
 .radar.strokeColor_10 {
-  color: #31a49b; }
+  color: #06cdc0; }
 .line.pointColor_10,
 .radar.pointColor_10 {
-  color: #31a49b; }
+  color: #06cdc0; }
 .line.pointStrokeColor_10,
 .radar.pointStrokeColor_10 {
   color: white; }
@@ -388,36 +388,28 @@
   color: white; }
 .line.pointHighlightStroke_10,
 .radar.pointHighlightStroke_10 {
-  color: #31a49b; }
+  color: #06cdc0; }
 
 .bar.fillColor_10 {
-  color: rgba(49, 164, 155, 0.5); }
+  color: rgba(6, 205, 192, 0.5); }
 .bar.strokeColor_10 {
-  color: rgba(49, 164, 155, 0.8); }
+  color: rgba(6, 205, 192, 0.8); }
 .bar.highlightFill_10 {
-  color: rgba(49, 164, 155, 0.75); }
+  color: rgba(6, 205, 192, 0.75); }
 .bar.highlightStroke_10 {
-  color: #31a49b; }
+  color: #06cdc0; }
 
 .pie.color_10,
 .polararea.color_10,
 .doughnut.color_10 {
-  color: #31a49b; }
+  color: #06cdc0; }
 .pie.highlight_10,
 .polararea.highlight_10,
 .doughnut.highlight_10 {
-  color: #37b8ae; }
+  color: #07e6d7; }
 
 .legend_icon_10 {
-  background: #31a49b; }
-
-.line-chart,
-.bar-chart,
-.pie-chart,
-.radar-chart,
-.polararea-chart,
-.doughnut-chart {
-  display: inline-block; }
+  background: #06cdc0; }
 
 .chart-title {
   display: block; }

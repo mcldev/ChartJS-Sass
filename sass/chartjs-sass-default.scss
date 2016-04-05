@@ -3,14 +3,6 @@
 //Set default colors - from angluar js version of chartjs - random colors thereafter for 10 in total
 @include chart_colors(($Blue, $Light_Grey, $Red, $Green, $Yellow, $Grey, $Dark_Grey), 10);
 
-.line-chart,
-.bar-chart,
-.pie-chart,
-.radar-chart,
-.polararea-chart,
-.doughnut-chart{
-    display: inline-block;
-}
 .chart-title {
     display: block;
 }
