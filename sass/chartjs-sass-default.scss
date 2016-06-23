@@ -9,22 +9,51 @@
 // To position the Chart Legend wrap the .chart and .chart-legend in .chart-container
 .chart-container {
 
+    /* Chart Container Formats */
+    /* ---------------------------- */
     //Set Margin variables
     $horizontal-margin: 10px;
     $vertical-margin: 10px;
 
+    //Set container width to be 100% of parent container
+    width:100%;
+
     //Set as inline flex
     @extend %inline-flex;
 
-    //Stop Wrapping
+    /* Set chart and legend as no wrap to stop moving to next line */
+    /* ---------------------------- */
     @include flex-wrap(nowrap);
 
-    //Justify content to the center of the container
-    @include justify-content(center);
 
-    //Align the items
-    &.left,
-    &.right {
+    /* Chart Container Content */
+    /* ---------------------------- */
+    //Justify content - center in parent by default
+    &.chart-center {
+        @include justify-content(center);
+        &.legend-bottom,
+        &.legend-top {
+            @include align-items(center);
+        }
+    }
+    &.chart-left {
+        @include justify-content(flex-start);
+        &.legend-left {
+            @include justify-content(flex-end);
+        }
+    }
+    &.chart-right {
+        @include justify-content(flex-end);
+        &.legend-left {
+            @include justify-content(flex-start);
+        }
+    }
+
+    /* Align Legend Items vertically */
+    /* ---------------------------- */
+    //Align left/right - center legend vertically to chart
+    &.legend-left,
+    &.legend-right {
         @include align-items(center);
         .chart-legend {
             li {
@@ -32,10 +61,9 @@
             }
         }
     }
-
     //Display the legend horizontally (inline) for top/bottom
-    &.top,
-    &.bottom {
+    &.legend-top,
+    &.legend-bottom {
         .chart-legend {
             text-align: center;
             li {
@@ -44,29 +72,25 @@
         }
     }
 
-    //Set chart and legend as no wrap to force to specified side
-    .chart,
-    .chart-legend {
-        @include flex-wrap(nowrap);
-    }
-
+    /* Set order of items for Legend on Left/Right or Top/Bottom of Chart */
+    /* ---------------------------- */
     //Reverse order for top or left position
-    &.left {
+    &.legend-left {
         @include flex-direction(row-reverse);
         .chart-legend {
             margin-right: $horizontal-margin;
         }
     }
-    &.right {
+    &.legend-right {
         @include flex-direction(row);
         .chart-legend {
             margin-left: $horizontal-margin;
         }
     }
-    &.top {
+    &.legend-top {
         @include flex-direction(column-reverse);
     }
-    &.bottom {
+    &.legend-bottom {
         @include flex-direction(column);
         .chart-legend {
             margin-top: $vertical-margin;
@@ -74,13 +98,11 @@
     }
 }
 
-//For all chart legend ul lists
-.line-legend,
-.bar-legend,
-.pie-legend,
-.radar-legend,
-.polararea-legend,
-.doughnut-legend
+/* Chart Legend Format */
+/* ---------------------------- */
+//For all chart-legend ul lists and chart-legend>ul
+.chart-legend ul,
+.chart-legend>ul
  {
     list-style-type: none;
     margin-top: 5px;
