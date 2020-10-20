@@ -40,39 +40,44 @@ $White: rgb(255,255,255);
         @if & {
             $pid: '&';
         }
-		//Create each id and class with the specified (or random) color
+
+        //Create each id and class with the specified (or random) color
+        $fill_color: rgba($base_color, 0.3);
+        $fill_hover_color: darken($fill_color, 20%);
+        $hover_color: darken($base_color, 20%);
+
 
 		//Line + Radar
 		#{$pid}.line,
-		#{$pid}.radar{
-			&.fillColor_#{$i} { color: rgba($base_color, 0.2); }
-			&.strokeColor_#{$i} { color: $base_color; }
-			&.pointColor_#{$i} { color: $base_color; }
-			&.pointStrokeColor_#{$i} { color: $White; }
-			&.pointHighlightFill_#{$i} { color: $White; }
-			&.pointHighlightStroke_#{$i} { color: $base_color; }
+		#{$pid}.scatter,
+		#{$pid}.radar {
+			&.backgroundColor_#{$i} { color: $fill_color; }
+			&.borderColor_#{$i} { color: $base_color; }
+			&.pointBackgroundColor_#{$i} { color: $base_color; }
+			&.pointBorderColor_#{$i} { color: $base_color; }
+			&.hoverBackgroundColor_#{$i} { color: $hover_color; }
+			&.hoverBorderColor_#{$i} { color: $hover_color; }
+			&.pointHoverBackgroundColor_#{$i} { color: $hover_color; }
+			&.pointHoverBorderColor_#{$i} { color: $hover_color; }
 		}
 		// Bar
-		#{$pid}.bar {
-			&.fillColor_#{$i} { color: rgba($base_color, 0.5); }
-			&.strokeColor_#{$i} { color: rgba($base_color, 0.8); }
-			&.highlightFill_#{$i} { color: rgba($base_color, 0.75); }
-        	&.highlightStroke_#{$i} { color: $base_color; }
-		}
-		// Polar + Pie + Doughnut - lighten highlight color
+        #{$pid}.bar,
+		#{$pid}.horizontalBar,
 		#{$pid}.pie,
-		#{$pid}.polararea,
 		#{$pid}.doughnut {
-			&.color_#{$i}  { color: $base_color; }
-			&.highlight_#{$i}  { color: lighten($base_color, 5%); }
+            &.backgroundColor_#{$i} { color: $base_color; }
+			&.borderColor_#{$i} { color: $base_color; }
+			&.hoverBackgroundColor_#{$i} { color: $hover_color; }
+        	&.hoverBorderColor_#{$i} { color: $hover_color; }
 		}
 
-		//Include the legend color values attached to the [chartid]_legend
-        @if & {
-            $pid: '&' + '_legend';
-        }
-		//#{$pid} .legend_text_#{$i} { color: $base_color; }
-		#{$pid} .legend_icon_#{$i} { background: $base_color; }
+		#{$pid}.polarArea,
+		#{$pid}.bubble, {
+			&.backgroundColor_#{$i} { color: $fill_color; }
+			&.borderColor_#{$i} { color: $base_color; }
+			&.hoverBackgroundColor_#{$i} { color: $fill_hover_color; }
+        	&.hoverBorderColor_#{$i} { color: $hover_color; }
+		}
     }
 }
 
@@ -83,13 +88,3 @@ $White: rgb(255,255,255);
     @return rgb($red, $green, $blue);
 }
 
-%clearfix {
-    &:after {
-        content: " ";
-        visibility: hidden;
-        display: block;
-        height: 0;
-        overflow: auto;
-        clear: both;
-    }
-}

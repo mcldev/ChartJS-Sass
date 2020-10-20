@@ -1,6 +1,10 @@
 # ChartJS-Sass
 SASS and JS library to integrate Chart.js with CSS.
 
+## Updates
+- The current version only works for Chart.Js version 2.x
+- For Chart.Js version 1.x use the Git tagged version of ChartJs-SASS v1.0.0
+
 ## Requires
 1. JQuery (any compatible version with ChartJS) [link](http://jquery.com/)
 2. Chart.js [link](http://www.chartjs.org/)
@@ -11,8 +15,8 @@ SASS and JS library to integrate Chart.js with CSS.
 3. Include jQuery, Chart.js and chartjs-sass javascript and stylesheets at the top of your document, i.e. above your script calls to build the charts. 
 e.g. add the following to the `<head>` section of your page
     ```html
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script src="/js/chartjs-sass.js"></script>
     
     <link rel="stylesheet" href="/css/chartjs-sass-default.css">
@@ -94,42 +98,26 @@ There are two optional inputs to the `chart_colors` sass mixin:
 
 **Sample output:**
 
-    ```css
-    .line.fillColor_1,
-    .radar.fillColor_1 {
-      color: rgba(151, 187, 205, 0.2); }
-    .line.strokeColor_1,
-    .radar.strokeColor_1 {
+    ```
+    .line.backgroundColor_1,
+    .scatter.backgroundColor_1,
+    .radar.backgroundColor_1 {
+      color: rgba(151, 187, 205, 0.3); }
+    .line.borderColor_1,
+    .scatter.borderColor_1,
+    .radar.borderColor_1 {
       color: #97bbcd; }
-    .line.pointColor_1,
-    .radar.pointColor_1 {
+    .line.pointBackgroundColor_1,
+    .scatter.pointBackgroundColor_1,
+    .radar.pointBackgroundColor_1 {
       color: #97bbcd; }
-    .line.pointStrokeColor_1,
-    .radar.pointStrokeColor_1 {
-      color: white; }
-    .line.pointHighlightFill_1,
-    .radar.pointHighlightFill_1 {
-      color: white; }
-    .line.pointHighlightStroke_1,
-    .radar.pointHighlightStroke_1 {
+    .line.pointBorderColor_1,
+    .scatter.pointBorderColor_1,
+    .radar.pointBorderColor_1 {
       color: #97bbcd; }
-    
-    .bar.fillColor_1 {
-      color: rgba(151, 187, 205, 0.5); }
-    .bar.strokeColor_1 {
-      color: rgba(151, 187, 205, 0.8); }
-    .bar.highlightFill_1 {
-      color: rgba(151, 187, 205, 0.75); }
-    .bar.highlightStroke_1 {
-      color: #97bbcd; }
-    
-    .pie.color_1,
-    .polar.color_1,
-    .doughnut.color_1 {
-      color: #97bbcd; }
-    .pie.highlight_1,
-    .polar.highlight_1,
-    .doughnut.highlight_1 {
-      color: #a8c6d5; }
+    .line.hoverBackgroundColor_1,
+    .scatter.hoverBackgroundColor_1,
+    .radar.hoverBackgroundColor_1 {
+      color: #528eac; }
     ```
  
