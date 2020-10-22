@@ -15,10 +15,6 @@ CHART_TYPES = {
     SCATTER: 'scatter',
 };
 
-DATASET_TYPE = {
-    DATASET: 'dataset',
-    DATA: 'data'
-};
 
 function get_color_types(chart_type) {
     switch (chart_type) {
@@ -38,23 +34,42 @@ function get_color_types(chart_type) {
     }
 }
 
-function get_dataset_type(chart_type) {
-    switch (chart_type) {
-        case CHART_TYPES.LINE:
-        case CHART_TYPES.RADAR:
-        case CHART_TYPES.BAR:
-            return DATASET_TYPE.DATASET;
-            break;
-        case CHART_TYPES.PIE:
-        case CHART_TYPES.POLAR:
-        case CHART_TYPES.DOUGHNUT:
-            return DATASET_TYPE.DATA;
-            break;
+function get_color_by_dataset(chart_type, color_by_dataset) {
+    if(typeof(color_by_dataset) === 'undefined') {
+        switch (chart_type) {
+            case CHART_TYPES.LINE:
+            case CHART_TYPES.RADAR:
+            case CHART_TYPES.SCATTER:
+            case CHART_TYPES.BUBBLE:
+                return true;
+            case CHART_TYPES.BAR:
+            case CHART_TYPES.HORIZONTAL_BAR:
+            case CHART_TYPES.DOUGHNUT:
+            case CHART_TYPES.PIE:
+            case CHART_TYPES.POLAR:
+                return false;
+        }
     }
+    return color_by_dataset;
 }
 
+function get_color_from_class(chartElement, theClass){
+    //Add the Class, get the computed colors, then remove the class
+    var theColor = "";
+    var tempClass = chartElement.attr('class');
+    chartElement
+        .addClass(theClass)
+        .removeClass(function (idx) {
+            theColor = $(this).css('color');
+            return theClass;
+        });
+    chartElement.attr('class', tempClass);
+    return theColor;
+}
+
+
 //Parse the Data and return colors
-function parse_css_colors(chart_id, chart_type, chart_data) {
+function parse_css_colors(chart_id, chart_type, chart_data, color_by_dataset) {
 
     //Parse if string, otherwise assume a json data object
     var dataIsString = (typeof (chart_data) == 'string');
@@ -64,41 +79,51 @@ function parse_css_colors(chart_id, chart_type, chart_data) {
     chart_selector = String(chart_id).startsWith('#') ? chart_id : '#' + chart_id;
     chart_selector = 'canvas' + chart_selector;
 
-    //Get Color Types for this chart type
-    var chart_color_types = get_color_types(chart_type);
-
     //Clear inline color on existing canvas object
     $(chart_selector).css('color', '');
 
-    //Get datasets - may need to create a switch in future if more data structures are used in ChartJS
-    var dataset_type = get_dataset_type(chart_type);
     var theDatasets = chart_data.data.datasets;
 
     //For each dataset
     $.each(theDatasets, function (dataset_idx, dataset) {
 
-        //Set the classes for each '[chart_type] [color_type]_[idx]'
+        // Get Chart type for each dataset if set
+        chart_type = ('type' in dataset) ? dataset.type : chart_type;
+
+        //Get Color Types for this chart type
+        var chart_color_types = get_color_types(chart_type);
+
+        //Get datasets - may need to create a switch in future if more data structures are used in ChartJS
+        var do_color_by_dataset = get_color_by_dataset(chart_type, color_by_dataset);
+
+        // For each name: backgroundColor, pointColor...
         $.each(chart_color_types, function (idx, theColorType) {
-            if(theColorType in dataset) return; //continue if color already set
 
-            var theClass = chart_type + ' ' + theColorType + '_' + (dataset_idx + 1);
-            var theColor = null;
+            // Continue if color already set
+            if (theColorType in dataset) return;
 
-            //Add the Class, get the computed colors, then remove the class
-            var tempClass = $(chart_selector).attr('class');
-            $(chart_selector)
-                .addClass(theClass)
-                .removeClass(function (idx) {
-                    theColor = $(this).css('color');
-                    return theClass;
-                });
-            $(chart_selector).attr('class', tempClass);
+            if (do_color_by_dataset) {
+                // Color by Dataset
+                // ---------------------------------------
+                // For each  dataset_idx and each name: backgroundColor, pointColor...
+                var theClass = chart_type + ' ' + theColorType + '_' + (dataset_idx + 1);
+                //Add/change the computed color to the data
+                dataset[theColorType] = get_color_from_class($(chart_selector), theClass);
 
-            //Add/change the computed color to the data
-            dataset[theColorType] = theColor;
-
+            } else {
+                // Color by Series
+                // ---------------------------------------
+                // Create an Array of colors and append to each dataset by type
+                var color_list = [];
+                for (i = 0; i < dataset.data.length; i++) {
+                    // For each  dataset_idx and each name: backgroundColor, pointColor...
+                    var theClass = chart_type + ' ' + theColorType + '_' + (i + 1);
+                    //Add/change the computed color to the data
+                    color_list.push(get_color_from_class($(chart_selector), theClass));
+                }
+                dataset[theColorType] = color_list;
+            }
         });
-
     });
 
     //If the data was orginally a string - then return as one
